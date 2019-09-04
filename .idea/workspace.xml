@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="hqlGenerate:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cd654266-a3cc-4027-8a60-e92cd6d781f9" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PATH_TO_GIT" value="C:\Program Files\Git\bin\git.exe" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="E:\zf_workspace_svn\hqlGenerate" />
+      </set>
+    </option>
+  </component>
+  <component name="JRebelWorkspace">
+    <option name="jrebelEnabledAutocompile" value="true" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1PrUF7u0W1TvEUoR25fvhgj91WD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="hqlgenerate" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="plugins.junitgenerator.application" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.zfsoft.hqlGen.generate" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.zfsoft.hqlGen.generate" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\zf_workspace_svn\hqlGenerate\src\main\java\com\zfsoft\hqlGen\annotation" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zfsoft.hqlGen.generate" />
+      <recent name="com.zfsoft.hqlGen.enumnation" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\zf_workspace_svn\hqlGenerate\src\main" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.HqlQueryGenerateTest.testGetQueryAndParams">
+    <configuration name="HqlQueryGenerateTest1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zfsoft.hqlGen.generate.HqlQueryGenerateTest1" />
+      <module name="hqlGenerate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zfsoft.hqlGen.generate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SqlVo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zfsoft.vo.SqlVo" />
+      <module name="hqlGenerate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zfsoft.vo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HqlQueryGenerateTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hqlGenerate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zfsoft.hqlGen.generate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zfsoft.hqlGen.generate" />
+      <option name="MAIN_CLASS_NAME" value="com.zfsoft.hqlGen.generate.HqlQueryGenerateTest1" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HqlQueryGenerateTest1.getQueryAndParamsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hqlGenerate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zfsoft.hqlGen.generate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zfsoft.hqlGen.generate" />
+      <option name="MAIN_CLASS_NAME" value="com.zfsoft.hqlGen.generate.HqlQueryGenerateTest1" />
+      <option name="METHOD_NAME" value="getQueryAndParamsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HqlQueryGenerateTest.testGetQueryAndParams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hqlGenerate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zfsoft.hqlGen.generate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zfsoft.hqlGen.generate" />
+      <option name="MAIN_CLASS_NAME" value="com.zfsoft.hqlGen.generate.HqlQueryGenerateTest" />
+      <option name="METHOD_NAME" value="testGetQueryAndParams" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="package" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="validate" />
+                <option value="compile" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map>
+                <entry key="DskipTests" value="false" />
+              </map>
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.HqlQueryGenerateTest1" />
+      <item itemvalue="Application.SqlVo" />
+      <item itemvalue="JUnit.HqlQueryGenerateTest1" />
+      <item itemvalue="JUnit.HqlQueryGenerateTest1.getQueryAndParamsTest" />
+      <item itemvalue="JUnit.HqlQueryGenerateTest.testGetQueryAndParams" />
+      <item itemvalue="Maven.package" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.HqlQueryGenerateTest.testGetQueryAndParams" />
+        <item itemvalue="JUnit.HqlQueryGenerateTest1.getQueryAndParamsTest" />
+        <item itemvalue="JUnit.HqlQueryGenerateTest1" />
+        <item itemvalue="Application.HqlQueryGenerateTest1" />
+        <item itemvalue="Application.SqlVo" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cd654266-a3cc-4027-8a60-e92cd6d781f9" name="Default Changelist" comment="" />
+      <created>1566631602556</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566631602556</updated>
+      <workItem from="1566631604205" duration="7880000" />
+      <workItem from="1566782347620" duration="7937000" />
+      <workItem from="1566797842735" duration="2273000" />
+      <workItem from="1566867733293" duration="3283000" />
+      <workItem from="1566960753929" duration="204000" />
+      <workItem from="1566962341452" duration="1006000" />
+      <workItem from="1566978956248" duration="125000" />
+      <workItem from="1567067806975" duration="658000" />
+      <workItem from="1567069173868" duration="2407000" />
+      <workItem from="1567394257471" duration="3008000" />
+      <workItem from="1567409765779" duration="882000" />
+      <workItem from="1567411226394" duration="3289000" />
+      <workItem from="1567477104325" duration="655000" />
+      <workItem from="1567492661938" duration="2854000" />
+      <workItem from="1567498971165" duration="66000" />
+      <workItem from="1567569221647" duration="9411000" />
+      <workItem from="1567583141561" duration="2137000" />
+      <workItem from="1567586323395" duration="28000" />
+      <workItem from="1567587416495" duration="640000" />
+    </task>
+    <task id="LOCAL-00001" summary="all in">
+      <created>1567579896835</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1567579896835</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add test file">
+      <created>1567585465443</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1567585465443</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="all in" />
+    <MESSAGE value="add test file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test file" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/generate/HqlQueryGenerate.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/hqlGenerate$HqlQueryGenerateTest_getQueryAndParamsTest.ic" NAME="HqlQueryGenerateTest.getQueryAndParamsTest Coverage Results" MODIFIED="1567582839985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.zfsoft.hqlGen.generate.*</FILTER>
+    </SUITE>
+  </component>
+</project>
