@@ -57,6 +57,7 @@ public class HqlQueryGenerate {
             throw new NullPointerException("clasz 为空 , 无法生成 hql");
         }
         String className = clazz.getName();
+        if(sqlVo == null ) sqlVo = new SqlVo();
         StringBuffer hql = new StringBuffer(sqlVo.getSelects() + " from " + className + " " + sqlVo.getAlias() + " where 1=1 ");
         Map<String, Object> sqlParameters = new HashMap<String, Object>();
         // 拼装 sql 参数
