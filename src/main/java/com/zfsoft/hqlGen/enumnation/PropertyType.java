@@ -22,7 +22,9 @@ public enum PropertyType {
     NOT_IN(" not in "),
     BETWEEN(" between "),
     EXIST( " EXIST "),
-    NOT_EXIST( " NOT EXIST ");
+    NOT_EXIST( " NOT EXIST "),
+    EMPTY( "EMPTY"),
+    NOT_EMPTY( "NOT_EMPTY");
 
 
 

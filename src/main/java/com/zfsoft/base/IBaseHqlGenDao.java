@@ -21,7 +21,7 @@ public interface IBaseHqlGenDao<T> {
      * @author wangsh
      * @date 20190802
      */
-    T queryFirstObjectByParams (PropertyFilter params) throws Exception;
+    T queryFirstObjectByParams (PropertyFilter...params) throws Exception;
 
     /**
      * @return
@@ -29,21 +29,21 @@ public interface IBaseHqlGenDao<T> {
      * @author wangsh
      * @date 20190802
      */
-    List<T> queryObjectByParams(PropertyFilter params, SqlVo sqlVo , Integer limit) throws Exception;
+    List<T> queryObjectByParams(SqlVo sqlVo , Integer limit , PropertyFilter...params) throws Exception;
     /**
      * @return
      * @description 根据对象和对象参数 获取对象列表
      * @author wangsh
      * @date 20190802
      */
-    List<T> queryObjectByParams( PropertyFilter params) throws Exception;
+    List<T> queryObjectByParams( PropertyFilter...params) throws Exception;
     /**
      * @return
      * @description 根据对象和对象参数 获取对象数量
      * @author wangsh
      * @date 20190802
      */
-    Integer queryObjectCountByParams( PropertyFilter params) throws Exception;
+    Integer queryObjectCountByParams( PropertyFilter...params) throws Exception;
 
     /**
      * @return
@@ -51,7 +51,7 @@ public interface IBaseHqlGenDao<T> {
      * @author wangsh
      * @date 20190802
      */
-    Pagination queryObjectPageByParams(PropertyFilter params, SqlVo sqlVo , Integer pageNumber, Integer pageSize) throws Exception;
+    Pagination queryObjectPageByParams(SqlVo sqlVo , Integer pageNumber, Integer pageSize , PropertyFilter...params) throws Exception;
 
     /**
      * @description  获取类的基础参数

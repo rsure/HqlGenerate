@@ -2,13 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14ba9bde-5323-40d1-9168-c7769ce47e10" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/generate/HqlQueryGenerate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/generate/HqlQueryGenerate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/exception/HQLGenException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/condition/ConditionGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/condition/Property.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/group/GroupGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/join/JoinGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/order/OrderGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/select/SelectGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/where/WhereGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/condition/ConditionHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/group/GroupHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/join/JoinHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/order/OrderHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/select/SelectHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/where/WhereHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/util/ClassUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zfsoft/base/impl/BaseHqlGenDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/base/IBaseHqlGenDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zfsoft/base/IBaseHqlGenDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/common/Pagination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zfsoft/common/Pagination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/enumnation/PropertyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/enumnation/PropertyType.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,12 +48,23 @@
     </option>
   </component>
   <component name="ProjectId" id="1QMlpg5HgibKMRUboRrTtIP3xad" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zfsoft.common" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -51,7 +89,11 @@
       <option name="presentableId" value="Default" />
       <updated>1567588530402</updated>
       <workItem from="1567588531658" duration="43000" />
-      <workItem from="1567648972722" duration="344000" />
+      <workItem from="1567648972722" duration="841000" />
+      <workItem from="1567651705578" duration="86000" />
+      <workItem from="1567737397389" duration="1592000" />
+      <workItem from="1567746909748" duration="2993000" />
+      <workItem from="1567752661226" duration="10510000" />
     </task>
     <servers />
   </component>
