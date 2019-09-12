@@ -1,15 +1,13 @@
 package com.wangsh.hqlGenerate.generate.condition;
 
-import com.wangsh.hqlGenerate.helper.condition.ConditionHelper;
+import com.wangsh.hqlGenerate.generate._property.Property;
+import com.wangsh.hqlGenerate.helper.Helper;
 import com.wangsh.hqlGenerate.util.ClassUtil;
-import com.zfsoft.hqlGen.enumnation.PropertyLinkType;
 import com.zfsoft.hqlGen.enumnation.PropertyType;
 import com.zfsoft.vo.BetweenVo;
-import com.zfsoft.vo.SqlVo;
+import org.apache.commons.lang3.StringUtils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author wangsh
@@ -17,297 +15,160 @@ import java.util.List;
  * @date 2019-9-6
  * @Copyright
  */
-public class ConditionGen implements ConditionHelper {
+public class ConditionGen implements Helper {
 
 
-    private Class clasz;
+    protected Class clasz;
 
-    private List<Property> conditions;
+    protected List<Property> conditions;
 
-    private List<List<Property>> andConditions;
-    private List<List<Property>> orConditions;
+    private Map<String, Object> hqlParams;
 
-    public ConditionHelper getInstance() {
-        ConditionHelper helper = new ConditionGen();
+    public static ConditionGen getInstance() {
+        ConditionGen helper = new ConditionGen();
         return helper;
     }
 
     public ConditionGen() {
-        this.andConditions = new ArrayList<List<Property>>();
-        this.orConditions = new ArrayList<List<Property>>();
-        this.conditions = new ArrayList<Property>();
-    }
-
-    private ConditionHelper add(String name, Object value, PropertyType type) {
-        this.conditions.add(Property.and(name, value, type));
-        return this;
-    }
-
-    private ConditionHelper or(String name, Object value, PropertyType type) {
-        this.conditions.add(Property.or(name, value, type));
-        return this;
+        this.conditions = new ArrayList<>();
+        this.hqlParams = new HashMap<>();
     }
 
     @Override
     public StringBuffer gengrate() throws Exception {
-        StringBuffer conditionHql = new StringBuffer();
-        for (int i = 0; i < andConditions.size(); i++) {
-            for (int j = 0; j < andConditions.get(i).size(); j++) {
-                Property p = andConditions.get(i).get(j);
-                // 参数 在
-                if(ClassUtil.filedInClass(clasz , p.getField())){
-                    String begin =  alies+"." +p.getField();
-                    String end ="";
+        StringBuffer conditionHql = new StringBuffer("");
+        if (!conditions.isEmpty()) {
+            conditionHql.append(gengrate(null, this.conditions));
+        }
+        return conditionHql;
+    }
+
+    private StringBuffer gengrate(Integer index, List<Property> properties) {
+        StringBuffer conditionHql = new StringBuffer("");
+        if (properties != null) {
+            for (int i = 0; i < properties.size(); i++) {
+                if (properties.get(i) != null) {
+                    Property property = properties.get(i);
+                    Object value = property.getValue();
                     // 字段 方式
-                    PropertyType type = p.getType();
-                    // 字段值
-                    Object value = p.getValue();
-                    if(type.equals(PropertyType.EMPTY) || type.equals(PropertyType.NOT_EMPTY) ){
-                        conditionHql.append(p.getLinkType().name() +"("+begin+" is null or "+begin+" = '' )");
+                    PropertyType propertyType = property.getType();
+                    if (i > 0) {
+                        conditionHql.append(" " + property.getLinkType().name() + " ");
                     }
+                    // 分组
+                    if (PropertyType.GROUP.equals(propertyType)) {
+                        if (property.getValue() != null) {
+                            conditionHql.append(" ( ").append(
+                                    // 内部的组合 参数 处理
+                                    gengrate(i, (List<Property>) value)
+
+                            ).append(" ) ");
+                        }
+                    } else if (PropertyType.NO_ACTIVE.equals(propertyType)) {
+                        // 直连 sql
+                        if (value != null && StringUtils.isNotBlank(value.toString())) {
+                            conditionHql.append("(").append(value.toString()).append(")");
+                        }
+                    } else {
+                        // 单个参数处理
+                        if (ClassUtil.filedInClass(this.clasz, property.getField())) {
+                            // 参数字段 属于class
+                            String $field = alies + "." + property.getField();
 
 
+                            if (propertyType.equals(PropertyType.EMPTY)) {
+                                // 为空
+                                conditionHql.append("(" + $field + " is null or " + $field + " = '' )");
+                            } else if (propertyType.equals(PropertyType.NOT_EMPTY)) {
+                                // 非空
+                                conditionHql.append("(" + $field + " is not null and " + $field + " != '' )");
+                            } else if (propertyType.equals(PropertyType.NULL) || propertyType.equals(PropertyType.NOT_NULL)) {
+                                // null 或 not null
+                                conditionHql.append($field + propertyType.getType());
+
+                            } else if (PropertyType.EXIST.equals(propertyType) || PropertyType.NOT_EXIST.equals(propertyType)) {
+                                conditionHql.append(propertyType.getType()).append(" ( ").append(value.toString()).append(" ) ");
+                            } else {
+                                // 参数名
+                                StringBuffer fieldParamName = new StringBuffer(alies.replaceAll("\\.", "") + "_");
+                                if (index != null) {
+                                    fieldParamName.append(index).append("_").append(i);
+                                } else {
+                                    fieldParamName.append(i).append("_").append(0);
+                                }
+                                fieldParamName.append("_" + property.getField());
+                                if (PropertyType.IN.equals(propertyType) || PropertyType.NOT_IN.equals(propertyType)) {
+
+                                    if (value instanceof List) {
+                                        if (!((List) value).isEmpty()) {
+                                            if (((List) value).size() == 1) {
+                                                conditionHql.append($field + (PropertyType.IN.equals(propertyType) ? " = " : " != ") + " :").append(fieldParamName).append(" ");
+                                                this.hqlParams.put(fieldParamName.toString(), ((List) value).get(0));
+                                            } else {
+                                                conditionHql.append($field + propertyType.getType() + " (:").append(fieldParamName).append(") ");
+                                                this.hqlParams.put(fieldParamName.toString(), value);
+                                            }
+                                        }
+                                    } else {
+                                        // 内联sql
+                                        conditionHql.append($field + propertyType.getType() + " (" + value.toString() + ") ");
+                                    }
+
+                                } else if (PropertyType.BETWEEN.equals(propertyType)) {
+                                    BetweenVo vo = (BetweenVo) value;
+                                    StringBuffer beginName = new StringBuffer(fieldParamName).append("_begin");
+                                    StringBuffer endName = new StringBuffer(fieldParamName).append("_end");
+
+                                    conditionHql.append("(" + $field + propertyType.getType() + ":").append(beginName).append(" and " + ":").append(endName).append(")");
+
+                                    this.hqlParams.put(beginName.toString(), vo.getBegin());
+                                    this.hqlParams.put(endName.toString(), vo.getEnd());
+                                } else {
+                                    conditionHql.append($field + propertyType.getType() + " :").append(fieldParamName).append(" ");
+                                    this.hqlParams.put(fieldParamName.toString(), value);
+                                }
+
+                            }
+
+
+                        }
+                    }
                 }
             }
         }
-        
-        
-        return null;
+        return conditionHql;
     }
 
-    @Override
-    public ConditionHelper groupAnd() {
-        List<Property> _group = this.conditions;
-        andConditions.add(_group);
-        this.conditions = new ArrayList<Property>();
+
+    public List<Property> getConditions() {
+        return conditions;
+    }
+
+    public Map<String, Object> getHqlParams() {
+        return hqlParams;
+    }
+
+    public Class getClasz() {
+        return clasz;
+    }
+
+    public void setClasz(Class clasz) {
+        this.clasz = clasz;
+    }
+
+    public Helper add(Property... propertys) {
+        if (propertys != null && propertys.length > 0) {
+            if (propertys.length == 1) {
+                this.conditions.add(propertys[0]);
+            } else {
+                this.conditions.addAll(Arrays.asList(propertys));
+            }
+        }
         return this;
     }
 
-    @Override
-    public ConditionHelper groupOr() {
-        List<Property> _group = this.conditions;
-        orConditions.add(_group);
-        this.conditions = new ArrayList<Property>();
+    public Helper add(List<Property> propertys) {
+        this.conditions.addAll(propertys);
         return this;
-    }
-
-    @Override
-    public ConditionHelper equal(String field, Object value) {
-        return add(field, value, PropertyType.EQUAL);
-    }
-
-    @Override
-    public ConditionHelper orEqual(String field, Object value) {
-        return or(field, value, PropertyType.EQUAL);
-    }
-
-    @Override
-    public ConditionHelper notEqual(String field, Object value) {
-        return add(field, value, PropertyType.NOT_EQUAL);
-    }
-
-    @Override
-    public ConditionHelper orNotEqual(String field, Object value) {
-        return or(field, value, PropertyType.NOT_EQUAL);
-    }
-
-    @Override
-    public ConditionHelper lt(String field, Comparable value) {
-        return add(field, value, PropertyType.LESS);
-    }
-
-    @Override
-    public ConditionHelper lt$eq(String field, Comparable value) {
-        return add(field, value, PropertyType.LESS_EQUAL);
-    }
-
-    @Override
-    public ConditionHelper gt(String field, Comparable value) {
-        return add(field, value, PropertyType.GREATER);
-    }
-
-    @Override
-    public ConditionHelper gt$eq(String field, Comparable value) {
-        return add(field, value, PropertyType.GREATER_EQUAL);
-    }
-
-    @Override
-    public ConditionHelper orLt(String field, Comparable value) {
-        return or(field, value, PropertyType.LESS);
-    }
-
-    @Override
-    public ConditionHelper orLt$eq(String field, Comparable value) {
-        return or(field, value, PropertyType.LESS_EQUAL);
-    }
-
-    @Override
-    public ConditionHelper orGt(String field, Comparable value) {
-        return or(field, value, PropertyType.GREATER);
-    }
-
-    @Override
-    public ConditionHelper orGt$eq(String field, Comparable value) {
-        return or(field, value, PropertyType.GREATER_EQUAL);
-    }
-
-    @Override
-    public ConditionHelper in(String field, SqlVo sqlVo) {
-        return add(field, sqlVo, PropertyType.IN);
-    }
-
-    @Override
-    public ConditionHelper orIn(String field, SqlVo sqlVo) {
-        return or(field, sqlVo, PropertyType.IN);
-    }
-
-    @Override
-    public ConditionHelper notIn(String field, SqlVo sqlVo) {
-        return add(field, sqlVo, PropertyType.NOT_IN);
-    }
-
-    @Override
-    public ConditionHelper orNotIn(String field, SqlVo sqlVo) {
-        return or(field, sqlVo, PropertyType.NOT_IN);
-    }
-
-    @Override
-    public ConditionHelper in(String field, List value) {
-        return add(field , value ,PropertyType.IN);
-    }
-
-    @Override
-    public ConditionHelper orIn(String field, Object[] value) {
-        return or(field, Arrays.asList(value), PropertyType.IN);
-    }
-
-    @Override
-    public ConditionHelper in(String field, List value, PropertyLinkType link) {
-        return add(field, value, PropertyType.IN);
-    }
-
-    @Override
-    public ConditionHelper orIn(String field, Object[] value, PropertyLinkType link) {
-        return or(field, Arrays.asList(value), PropertyType.IN);
-    }
-
-    @Override
-    public ConditionHelper exist(String field, SqlVo sqlVo) {
-        return add(field, sqlVo, PropertyType.EXIST);
-    }
-
-    @Override
-    public ConditionHelper notExist(String field, SqlVo sqlVo) {
-        return add(field, sqlVo, PropertyType.NOT_EXIST);
-    }
-
-    @Override
-    public ConditionHelper orExist(String field, SqlVo sqlVo) {
-        return or(field, sqlVo, PropertyType.EXIST);
-    }
-
-    @Override
-    public ConditionHelper orNotExist(String field, SqlVo sqlVo) {
-        return or(field, sqlVo, PropertyType.NOT_EXIST);
-    }
-
-    @Override
-    public ConditionHelper notIn(String field, List value) {
-        return add(field, Arrays.asList(value), PropertyType.NOT_IN);
-    }
-
-    @Override
-    public ConditionHelper orNotIn(String field, Object[] value) {
-        return or(field, Arrays.asList(value), PropertyType.NOT_IN);
-    }
-
-    @Override
-    public ConditionHelper notIn(String field, List value, PropertyLinkType link) {
-        return add(field, Arrays.asList(value), PropertyType.NOT_IN);
-    }
-
-    @Override
-    public ConditionHelper orNotIn(String field, Object[] value, PropertyLinkType link) {
-        return or(field, Arrays.asList(value), PropertyType.NOT_IN);
-    }
-
-    @Override
-    public ConditionHelper startWith(String field, String value) {
-        return add(field, value+"%", PropertyType.LIKE);
-    }
-
-    @Override
-    public ConditionHelper orStartWith(String field, String value) {
-        return or(field, value+"%", PropertyType.LIKE);
-    }
-
-    @Override
-    public ConditionHelper endWith(String field, String value) {
-        return add(field, "%"+value, PropertyType.LIKE);
-    }
-
-    @Override
-    public ConditionHelper orEndWith(String field, String value, PropertyLinkType link) {
-        return or(field, "%"+value, PropertyType.LIKE);
-    }
-
-    @Override
-    public ConditionHelper like(String field, String value) {
-        return add(field, "%"+value+"%", PropertyType.LIKE);
-    }
-
-    @Override
-    public ConditionHelper orLike(String field, String value) {
-        return or(field, "%"+value+"%", PropertyType.LIKE);
-    }
-
-    @Override
-    public ConditionHelper between(String field, BetweenVo vo) {
-        return add(field, vo, PropertyType.BETWEEN);
-    }
-
-    @Override
-    public ConditionHelper orBetween(String field, BetweenVo vo) {
-        return or(field, vo, PropertyType.BETWEEN);
-    }
-
-    @Override
-    public ConditionHelper isNull(String field) {
-        return add(field, null, PropertyType.EQUAL);
-    }
-
-    @Override
-    public ConditionHelper orNull(String field) {
-        return or(field, null, PropertyType.EQUAL);
-    }
-
-    @Override
-    public ConditionHelper notNull(String field) {
-        return add(field, null, PropertyType.NOT_EQUAL);
-    }
-
-    @Override
-    public ConditionHelper orNotNull(String field) {
-        return or(field, null, PropertyType.NOT_EQUAL);
-    }
-
-    @Override
-    public ConditionHelper isEmpty(String field) {
-        return add(field, null, PropertyType.EMPTY);
-    }
-
-    @Override
-    public ConditionHelper orEmpty(String field) {
-        return or(field, null, PropertyType.EMPTY);
-    }
-
-    @Override
-    public ConditionHelper isNotEmpty(String field) {
-        return add(field, null, PropertyType.NOT_EMPTY);
-    }
-
-    @Override
-    public ConditionHelper orNotEmpty(String field) {
-        return or(field, null, PropertyType.NOT_EMPTY);
     }
 }

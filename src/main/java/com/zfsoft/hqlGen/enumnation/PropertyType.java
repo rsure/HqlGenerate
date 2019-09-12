@@ -11,6 +11,8 @@ import org.apache.commons.lang3.StringUtils;
  */
 public enum PropertyType {
 
+    NULL(" is null "),
+    NOT_NULL(" is not null "),
     NOT_EQUAL(" != "),
     GREATER(" > "),
     LESS(" < "),
@@ -24,7 +26,16 @@ public enum PropertyType {
     EXIST( " EXIST "),
     NOT_EXIST( " NOT EXIST "),
     EMPTY( "EMPTY"),
-    NOT_EMPTY( "NOT_EMPTY");
+    NOT_EMPTY( "NOT_EMPTY"),
+    /*
+     * @description 值可再分
+     */
+    GROUP("GROUP"),
+    /*
+     * @description 无关联 直接 and
+     */
+    NO_ACTIVE("NO_ACTIVE");
+
 
 
 
@@ -40,5 +51,9 @@ public enum PropertyType {
     public boolean equals(String typeName){
         if(StringUtils.isBlank(typeName)) return false;
         return this.getType().equals(typeName);
+    }
+
+    public boolean equals(PropertyType type){
+        return this.getType().equals(type.getType());
     }
 }

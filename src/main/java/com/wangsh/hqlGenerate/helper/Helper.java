@@ -1,5 +1,9 @@
 package com.wangsh.hqlGenerate.helper;
 
+import com.wangsh.hqlGenerate.generate._property.Property;
+
+import java.util.List;
+
 /**
  * @author wangsh
  * @description
@@ -11,12 +15,15 @@ public interface Helper {
     String alies = "t";
 
     /**
+     * @param
+     * @return
      * @description
      * @author wangsh
      * @date
-     * @param
-     * @return
      */
     StringBuffer gengrate() throws Exception;
 
+    Class getClasz();
+
+    void setClasz(Class clasz);
 }
