@@ -10,7 +10,7 @@ import java.util.Date;
  * @date 2019-9-10
  * @Copyright
  */
-public class ConditionGenTest {
+class ConditionGenTest {
 
     public String name;
 
@@ -24,7 +24,7 @@ public class ConditionGenTest {
 
 
     public static void main(String[] args) {
-        ConditionGen gen = ConditionGen.getInstance();
+        ConditionGen gen = ConditionGen.getInstance(ConditionGenTest.class);
         gen.setClasz(ConditionGenTest.class);
         gen.add(PropertyUtil.getInstance().like("name", "abc").startWith("code", "GB_").lt("time", System.currentTimeMillis()).between("createDate", new Date(), new Date()).getPropertys());
         gen.add(PropertyUtil.getInstance().equal("code", "HK_").orNotEmpty("code").groupOrProperties());

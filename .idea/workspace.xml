@@ -2,28 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14ba9bde-5323-40d1-9168-c7769ce47e10" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/_property/PropertyUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/condition/ConditionGenTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/group/GroupGenTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/join/JoinGenTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/order/OrderGenTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/select/SelectGenTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/HQLHepler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/HqlGenBaseUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/HQLHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/HQLHelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/exception/HQLGenException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/_property/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/_property/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/_property/PropertyUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/_property/PropertyUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/condition/ConditionGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/condition/ConditionGen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/condition/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/_property/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/condition/ConditionGenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/condition/ConditionGenTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/group/GroupGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/group/GroupGen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/group/GroupGenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/group/GroupGenTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/join/JoinGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/join/JoinGen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/join/JoinGenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/join/JoinGenTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/order/OrderGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/order/OrderGen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/order/OrderGenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/order/OrderGenTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/select/SelectGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/select/SelectGen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/select/SelectGenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/select/SelectGenTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/where/WhereGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/where/WhereGen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/HQLHepler.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/condition/ConditionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/group/GroupHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/join/JoinHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/order/OrderHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/select/SelectHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/helper/where/WhereHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/enumnation/PropertyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/enumnation/PropertyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/util/ClassUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/base/IBaseHqlGenDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/base/IBaseHqlGenService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/base/impl/BaseHqlGenDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/common/Pagination.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/annotation/BaseBeanFieldDefullVal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/annotation/BaseBeanFieldDefultParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/annotation/BaseBeanFieldDefultParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/enumnation/PropertyLinkType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/enumnation/PropertyLinkType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/enumnation/PropertyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/enumnation/PropertyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/enumnation/PropertyValType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/enumnation/PropertyValType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/generate/BeanDefultUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/generate/HqlQueryGenerate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/generate/PropertyFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/hqlGen/generate/PropertySql.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/vo/BetweenVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/vo/BetweenVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zfsoft/vo/SqlVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/zfsoft/hqlGen/generate/HqlQueryGenerateTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/zfsoft/hqlGen/generate/TestBean.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +51,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Tag Library Descriptor" />
         <option value="Class" />
       </list>
     </option>
@@ -55,21 +72,32 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/com/wangsh/hqlGenerate/helper" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\GitHub\HqlGenerate\src\main\java\com\wangsh\hqlGenerate\helper" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.wangsh.hqlGenerate" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.wangsh.hqlGenerate.generate.select" />
       <recent name="com.wangsh.hqlGenerate.generate.group" />
       <recent name="com.zfsoft.common" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\GitHub\HqlGenerate\src\test\java\com\wangsh\hqlGenerate\helper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -84,20 +112,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GroupGenTest">
-    <configuration name="ConditionGenTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.wangsh.hqlGenerate.generate.condition.ConditionGenTest" />
-      <module name="com.hibernate.hqlGenerate" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.wangsh.hqlGenerate.generate._property.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.HQLHelperTest">
     <configuration name="GroupGenTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wangsh.hqlGenerate.generate.group.GroupGenTest" />
       <module name="com.hibernate.hqlGenerate" />
@@ -111,12 +126,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JoinGenTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.wangsh.hqlGenerate.generate.join.JoinGenTest" />
+    <configuration name="HQLHelperTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wangsh.hqlGenerate.helper.HQLHelperTest" />
       <module name="com.hibernate.hqlGenerate" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wangsh.hqlGenerate.generate.join.*" />
+          <option name="PATTERN" value="com.wangsh.hqlGenerate.helper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,12 +139,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderGenTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.wangsh.hqlGenerate.generate.order.OrderGenTest" />
+    <configuration name="HQLHeplerMainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wangsh.hqlGenerate.helper.HQLHeplerMainTest" />
       <module name="com.hibernate.hqlGenerate" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wangsh.hqlGenerate.generate.order.*" />
+          <option name="PATTERN" value="com.wangsh.hqlGenerate.helper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,26 +152,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SVNUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.wangsh.util.SVNUtil" />
+    <configuration name="HqlGenBaseUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.wangsh.hqlGenerate.HqlGenBaseUtil" />
       <module name="com.hibernate.hqlGenerate" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.wangsh.util.*" />
+          <option name="PATTERN" value="com.wangsh.hqlGenerate.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HQLHeplerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.hibernate.hqlGenerate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.com.wangsh.hqlGenerate.helper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wangsh.hqlGenerate.helper" />
+      <option name="MAIN_CLASS_NAME" value="test.com.wangsh.hqlGenerate.helper.HQLHeplerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HQLHeplerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.hibernate.hqlGenerate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.wangsh.hqlGenerate.helper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.wangsh.hqlGenerate.helper" />
+      <option name="MAIN_CLASS_NAME" value="com.wangsh.hqlGenerate.helper.HQLHeplerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HQLHelperTest" />
+        <item itemvalue="Application.HqlGenBaseUtil" />
+        <item itemvalue="JUnit.HQLHeplerTest" />
+        <item itemvalue="Application.HQLHeplerMainTest" />
         <item itemvalue="Application.GroupGenTest" />
-        <item itemvalue="Application.OrderGenTest" />
-        <item itemvalue="Application.JoinGenTest" />
-        <item itemvalue="Application.ConditionGenTest" />
-        <item itemvalue="Application.SVNUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -181,6 +226,14 @@
       <workItem from="1568165303300" duration="10628000" />
       <workItem from="1568195532274" duration="21000" />
       <workItem from="1568250844548" duration="21090000" />
+      <workItem from="1568596449400" duration="7327000" />
+      <workItem from="1568603860053" duration="420000" />
+      <workItem from="1568605257311" duration="5506000" />
+      <workItem from="1568688220850" duration="2285000" />
+      <workItem from="1568710625020" duration="2145000" />
+      <workItem from="1568771601768" duration="7642000" />
+      <workItem from="1568784340131" duration="628000" />
+      <workItem from="1568788065416" duration="56000" />
     </task>
     <servers />
   </component>
@@ -200,12 +253,15 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/wangsh/hqlGenerate/generate/join/JoinGenTest.java</url>
-          <line>33</line>
+          <line>32</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>

@@ -8,10 +8,10 @@ import com.wangsh.hqlGenerate.generate.order.OrderGen;
  * @date 2019-9-12
  * @Copyright
  */
-public class GroupGenTest {
+class GroupGenTest {
     public static void main(String[] args) {
         try{
-            String hql = GroupGen.getInstance().group("name").group("code").group("age","t2").gengrate().toString();
+            String hql = GroupGen.getInstance(GroupGenTest.class).group("name").group("code").group("age","t2").gengrate().toString();
             System.out.println(hql);
 
         }catch (Exception e){

@@ -1,8 +1,9 @@
 package com.wangsh.hqlGenerate.generate._property;
 
-import com.zfsoft.hqlGen.enumnation.PropertyLinkType;
-import com.zfsoft.hqlGen.enumnation.PropertyType;
-import com.zfsoft.vo.BetweenVo;
+import com.wangsh.hqlGenerate.HqlGenBaseUtil;
+import com.wangsh.hqlGenerate.enumnation.PropertyLinkType;
+import com.wangsh.hqlGenerate.enumnation.PropertyType;
+import com.wangsh.hqlGenerate.vo.BetweenVo;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
@@ -15,7 +16,7 @@ import java.util.List;
  * @date 2019-9-6
  * @Copyright
  */
-public class Property  {
+public class Property {
 
     private String field;
 
@@ -88,25 +89,25 @@ public class Property  {
     public static Property inHql(String field, String hql) {
         if (StringUtils.isBlank(field)) return null;
         if (StringUtils.isBlank(hql)) return null;
-        return Property.in(field, hql);
+        return add(field, hql, PropertyType.IN);
     }
 
     public static Property orInHql(String field, String hql) {
         if (StringUtils.isBlank(field)) return null;
         if (StringUtils.isBlank(hql)) return null;
-        return Property.orIn(field, hql);
+        return or(field, hql, PropertyType.IN);
     }
 
     public static Property notInHql(String field, String hql) {
         if (StringUtils.isBlank(field)) return null;
         if (StringUtils.isBlank(hql)) return null;
-        return Property.notIn(field, hql);
+        return and(field, hql, PropertyType.NOT_IN);
     }
 
     public static Property orNotInHql(String field, String hql) {
         if (StringUtils.isBlank(field)) return null;
         if (StringUtils.isBlank(hql)) return null;
-        return Property.orNotIn(field, hql);
+        return or(field, hql, PropertyType.NOT_IN);
     }
 
     public static Property existHql(String field, String hql) {
@@ -138,14 +139,14 @@ public class Property  {
     //~~~~~~~~~~~~~~~~~~~~~~ 内联 参数   start ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public static Property groupAnd(List<Property> value) {
         if (value == null || value.isEmpty()) return null;
-        if(value.size() == 1)
+        if (value.size() == 1)
             return new Property(null, value.get(0), PropertyType.GROUP, PropertyLinkType.AND);
         return new Property(null, value, PropertyType.GROUP, PropertyLinkType.AND);
     }
 
     public static Property groupOr(List<Property> value) {
         if (value == null || value.isEmpty()) return null;
-        if(value.size() == 1)
+        if (value.size() == 1)
             return new Property(null, value.get(0), PropertyType.GROUP, PropertyLinkType.OR);
         return new Property(null, value, PropertyType.GROUP, PropertyLinkType.OR);
     }
@@ -159,191 +160,173 @@ public class Property  {
         return Property.or(name, value, type);
     }
 
-
     public static Property equal(String field, Object value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return Property.isNull(field);
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return add(field, value, PropertyType.EQUAL);
     }
 
-
     public static Property orEqual(String field, Object value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return Property.orNull(field);
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return addOr(field, value, PropertyType.EQUAL);
     }
 
 
     public static Property notEqual(String field, Object value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return Property.notNull(field);
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return add(field, value, PropertyType.NOT_EQUAL);
     }
 
 
     public static Property orNotEqual(String field, Object value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return Property.orNotNull(field);
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return addOr(field, value, PropertyType.NOT_EQUAL);
     }
 
 
     public static Property lt(String field, Comparable value) {
         if (StringUtils.isBlank(field)) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return add(field, value, PropertyType.LESS);
     }
 
 
     public static Property lt$eq(String field, Comparable value) {
         if (StringUtils.isBlank(field)) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return add(field, value, PropertyType.LESS_EQUAL);
     }
 
 
     public static Property gt(String field, Comparable value) {
         if (StringUtils.isBlank(field)) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return add(field, value, PropertyType.GREATER);
     }
 
 
     public static Property gt$eq(String field, Comparable value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return add(field, value, PropertyType.GREATER_EQUAL);
     }
 
 
     public static Property orLt(String field, Comparable value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return addOr(field, value, PropertyType.LESS);
     }
 
 
     public static Property orLt$eq(String field, Comparable value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return addOr(field, value, PropertyType.LESS_EQUAL);
     }
 
 
     public static Property orGt(String field, Comparable value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return addOr(field, value, PropertyType.GREATER);
     }
 
 
     public static Property orGt$eq(String field, Comparable value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return addOr(field, value, PropertyType.GREATER_EQUAL);
     }
 
-
-    public static Property in(String field, String hql) {
-        if (StringUtils.isBlank(field)) return null;
-        return add(field, hql, PropertyType.IN);
-    }
-
-
-    public static Property orIn(String field, String hql) {
-        if (StringUtils.isBlank(field)) return null;
-        return addOr(field, hql, PropertyType.IN);
-    }
-
-
-    public static Property notIn(String field, String hql) {
-        if (StringUtils.isBlank(field)) return null;
-        return add(field, hql, PropertyType.NOT_IN);
-    }
-
-
-    public static Property orNotIn(String field, String hql) {
-        if (StringUtils.isBlank(field)) return null;
-        return addOr(field, hql, PropertyType.NOT_IN);
-    }
-
-
     public static Property in(String field, List value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return add(field, value, PropertyType.IN);
     }
 
 
     public static Property in(String field, Object[] value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return add(field, Arrays.asList(value), PropertyType.IN);
     }
 
 
     public static Property orIn(String field, List value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return addOr(field, value, PropertyType.IN);
     }
 
 
     public static Property orIn(String field, Object[] value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return addOr(field, Arrays.asList(value), PropertyType.IN);
     }
 
     public static Property notIn(String field, List value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return add(field, Arrays.asList(value), PropertyType.NOT_IN);
     }
 
 
     public static Property orNotIn(String field, Object[] value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return addOr(field, Arrays.asList(value), PropertyType.NOT_IN);
+    }
+
+    public static Property orNotIn(String field, List value) {
+        if (StringUtils.isBlank(field)) return null;
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
+        return addOr(field, value , PropertyType.NOT_IN);
     }
 
 
     public static Property startWith(String field, String value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return Property.isEmpty(field);
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return add(field, value + "%", PropertyType.LIKE);
     }
 
 
     public static Property orStartWith(String field, String value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return Property.orEmpty(field);
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return addOr(field, value + "%", PropertyType.LIKE);
     }
 
 
     public static Property endWith(String field, String value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return Property.isEmpty(field);
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return add(field, "%" + value, PropertyType.LIKE);
     }
 
 
     public static Property orEndWith(String field, String value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return Property.orEmpty(field);
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return addOr(field, "%" + value, PropertyType.LIKE);
     }
 
 
     public static Property like(String field, String value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return Property.isEmpty(field);
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return add(field, "%" + value + "%", PropertyType.LIKE);
     }
 
 
     public static Property orLike(String field, String value) {
         if (StringUtils.isBlank(field)) return null;
-        if (value == null) return Property.orEmpty(field);
+        if (HqlGenBaseUtil.isEmpty(value)) return null;
         return addOr(field, "%" + value + "%", PropertyType.LIKE);
     }
 

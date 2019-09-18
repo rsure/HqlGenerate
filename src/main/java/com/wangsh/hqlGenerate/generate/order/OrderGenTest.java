@@ -6,10 +6,10 @@ package com.wangsh.hqlGenerate.generate.order;
  * @date 2019-9-12
  * @Copyright
  */
-public class OrderGenTest {
+class OrderGenTest {
     public static void main(String[] args) {
         try{
-            String hql = OrderGen.getInstance().asc("name").desc("code").desc("age","t2").gengrate().toString();
+            String hql = OrderGen.getInstance( OrderGenTest.class ).asc("name").desc("code").desc("age","t2").gengrate().toString();
             System.out.println(hql);
 
         }catch (Exception e){

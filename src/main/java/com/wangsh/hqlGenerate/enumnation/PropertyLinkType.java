@@ -1,4 +1,4 @@
-package com.zfsoft.hqlGen.enumnation;
+package com.wangsh.hqlGenerate.enumnation;
 
 /**
  * @description 参数之间的 关联关系

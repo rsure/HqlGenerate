@@ -39,6 +39,16 @@ public class SelectGen implements Helper {
         return this;
     }
 
+    /*
+     * @description 用户自定义select  需要加上别名
+     */
+    public SelectGen customSelect(String field){
+        if(StringUtils.isNotBlank(field)){
+            this.selects.add(field);
+        }
+        return this;
+    }
+
     @Override
     public StringBuffer gengrate( ) throws Exception {
         StringBuffer select = new StringBuffer("");
@@ -56,13 +66,4 @@ public class SelectGen implements Helper {
         return new StringBuffer("SELECT "+alies+".* ");
     }
 
-    @Override
-    public Class getClasz() {
-        return clasz;
-    }
-
-    @Override
-    public void setClasz(Class clasz) {
-        this.clasz = clasz;
-    }
 }

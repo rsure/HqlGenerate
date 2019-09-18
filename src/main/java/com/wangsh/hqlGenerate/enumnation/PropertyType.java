@@ -1,4 +1,4 @@
-package com.zfsoft.hqlGen.enumnation;
+package com.wangsh.hqlGenerate.enumnation;
 
 import org.apache.commons.lang3.StringUtils;
 

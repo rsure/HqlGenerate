@@ -1,17 +1,10 @@
-package com.zfsoft.vo;/**
- * @title: BetweenVo
- * @projectName hqlGenerate
- * @description: TODO
- * @author wangsh
- * @date 2019-8-2811:24
- */
+package com.wangsh.hqlGenerate.vo;
 
 /**
- * @description
  * @author wangsh
+ * @description 之间
  * @date 2019-8-28
  * @Copyright
- *
  */
 public class BetweenVo<T extends Comparable> {
     private T begin;

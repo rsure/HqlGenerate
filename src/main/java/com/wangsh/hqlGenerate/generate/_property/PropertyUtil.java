@@ -1,8 +1,5 @@
 package com.wangsh.hqlGenerate.generate._property;
 
-import com.zfsoft.hqlGen.enumnation.PropertyLinkType;
-import com.zfsoft.hqlGen.enumnation.PropertyType;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -226,6 +223,10 @@ public class PropertyUtil {
         return this;
     }
 
+    public PropertyUtil orNotIn(String field, List value) {
+        this.propertys.add(Property.orNotIn(field, value));
+        return this;
+    }
 
     public PropertyUtil startWith(String field, String value) {
         this.propertys.add(Property.startWith(field, value));

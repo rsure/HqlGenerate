@@ -1,7 +1,6 @@
 package com.wangsh.hqlGenerate.generate.join;
 
 import com.wangsh.hqlGenerate.generate._property.PropertyUtil;
-import com.wangsh.hqlGenerate.generate.condition.ConditionGenTest;
 
 import java.util.Date;
 
@@ -11,7 +10,7 @@ import java.util.Date;
  * @date 2019-9-12
  * @Copyright
  */
-public class JoinGenTest {
+class JoinGenTest {
 
     private String thirdOid;
 
@@ -26,7 +25,7 @@ public class JoinGenTest {
     public long time;
 
     public static void main(String[] args) {
-        JoinGen gen =JoinGen.leftJoin("thirdOid" , ConditionGenTest.class.getName() ,"t2" );
+        JoinGen gen =JoinGen.leftJoin(JoinGenTest.class ,"thirdOid" , JoinGenTest.class.getName() ,"t2" );
         gen.setClasz(JoinGenTest.class);
 
         gen.add(PropertyUtil.getInstance().like("name", "abc").startWith("code", "GB_").lt("time", System.currentTimeMillis()).between("createDate", new Date(), new Date()).getPropertys());

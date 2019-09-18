@@ -16,16 +16,48 @@ public class OrderGen implements Helper {
 
     private Class clasz;
 
-    private String fieldAlies;
     private List<String> orders;
 
-    public OrderGen() {
+    public OrderGen(Class clasz) {
         orders = new ArrayList<>();
     }
 
-    public static OrderGen getInstance(){
-        OrderGen gen = new OrderGen();
+    public static OrderGen getInstance(Class clasz){
+        OrderGen gen = new OrderGen(clasz);
         return gen;
+    }
+
+    /*
+     * @description 添加 order
+     * @param order 排序字段
+     * @param fieldAlies 排序字段 所属表别名
+     *
+     */
+    private OrderGen order(String order,String fieldAlies ,String desc){
+        if(StringUtils.isNotBlank(order)){
+            if(StringUtils.isNotBlank(fieldAlies)){
+                order = fieldAlies+"."+order.trim();
+            }
+            orders.add(order + " " +desc);
+        }
+        return this;
+    }
+
+    /*
+     * @description 添加自定义排序字段 , order字段为默认表
+     */
+    public OrderGen order(String order){
+        return order(order , alies , null);
+    }
+
+    /*
+     * @description 添加自定义排序字段 , order 需要加上别名
+     */
+    public OrderGen customOrder(String order){
+        if(StringUtils.isNotBlank(order)){
+            orders.add(order.trim());
+        }
+        return this;
     }
 
     public OrderGen asc(String order){
@@ -35,23 +67,10 @@ public class OrderGen implements Helper {
         return desc(order,alies);
     }
     public OrderGen asc(String order,String fieldAlies){
-        if(StringUtils.isNotBlank(order)){
-            if(StringUtils.isNotBlank(fieldAlies)){
-                order = fieldAlies+"."+order;
-            }
-            orders.add(order.trim());
-        }
-        return this;
+        return order(order , fieldAlies ,null);
     }
     public OrderGen desc(String order,String fieldAlies){
-        if(StringUtils.isNotBlank(order)){
-            if(StringUtils.isNotBlank(fieldAlies)){
-                order = fieldAlies+"."+order;
-            }
-            orders.add(order.trim() + " DESC ");
-        }
-
-        return this;
+        return order(order , fieldAlies ,"DESC");
     }
 
     @Override
@@ -65,15 +84,5 @@ public class OrderGen implements Helper {
             return new StringBuffer(orderhql.substring(0,orderhql.lastIndexOf(",")));
         }
         return orderhql;
-    }
-
-    @Override
-    public Class getClasz() {
-        return clasz;
-    }
-
-    @Override
-    public void setClasz(Class clasz) {
-        this.clasz = clasz;
     }
 }

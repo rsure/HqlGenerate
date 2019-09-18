@@ -22,26 +22,26 @@ public class JoinGen extends ConditionGen {
     private final static String RIGHT_JOIN = " RIGHT JOIN ";
     private final static String INNER_JOIN = " INNER JOIN ";
 
-    private JoinGen(String field, String withFild, String joinAlies ,String joinType) {
-        super();
+    private JoinGen(Class clasz ,String field, String withFild, String joinAlies ,String joinType) {
+        super(clasz);
         this.field = field;
         this.withFild = withFild;
         this.joinAlies = joinAlies;
         this.joinType = joinType;
     }
 
-    public static JoinGen leftJoin(String field, String withFild ,String joinAlies) {
-        JoinGen gen = new JoinGen(field, withFild, joinAlies , LEFT_JOIN);
+    public static JoinGen leftJoin(Class clasz ,String field, String withFild ,String joinAlies) {
+        JoinGen gen = new JoinGen(clasz,field, withFild, joinAlies , LEFT_JOIN);
         return gen;
     }
 
-    public static JoinGen rightJoin(String field, String withFild ,String joinAlies) {
-        JoinGen gen = new JoinGen(field, withFild, joinAlies ,RIGHT_JOIN);
+    public static JoinGen rightJoin(Class clasz ,String field, String withFild ,String joinAlies) {
+        JoinGen gen = new JoinGen(clasz,field, withFild, joinAlies ,RIGHT_JOIN);
         return gen;
     }
 
-    public static JoinGen innerJoin(String field, String withFild ,String joinAlies) {
-        JoinGen gen = new JoinGen(field, withFild,  joinAlies ,INNER_JOIN);
+    public static JoinGen innerJoin(Class clasz ,String field, String withFild ,String joinAlies) {
+        JoinGen gen = new JoinGen(clasz,field, withFild,  joinAlies ,INNER_JOIN);
         return gen;
     }
 

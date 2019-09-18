@@ -23,7 +23,4 @@ public interface Helper {
      */
     StringBuffer gengrate() throws Exception;
 
-    Class getClasz();
-
-    void setClasz(Class clasz);
 }

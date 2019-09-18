@@ -19,17 +19,26 @@ public class GroupGen implements Helper {
     private String fieldAlies;
     private List<String> groups;
 
-    public GroupGen() {
+    public GroupGen(Class clasz) {
         groups = new ArrayList<>();
     }
 
-    public static GroupGen getInstance(){
-        GroupGen gen = new GroupGen();
+    public static GroupGen getInstance(Class clasz){
+        GroupGen gen = new GroupGen(clasz);
         return gen;
     }
 
     public GroupGen group(String field){
        return group(field,alies);
+    }
+    /**
+     * @description 自定义的分组字段 需要带上别名
+     */
+    public GroupGen customGroup(String field){
+        if(StringUtils.isNotBlank(field)){
+            this.groups.add(field);
+        }
+        return this;
     }
 
     public GroupGen group(String field , String fieldAlies){
@@ -50,16 +59,6 @@ public class GroupGen implements Helper {
             return new StringBuffer(grouphql.substring(0,grouphql.lastIndexOf(",")));
         }
         return grouphql;
-    }
-
-    @Override
-    public Class getClasz() {
-        return clasz;
-    }
-
-    @Override
-    public void setClasz(Class clasz) {
-        this.clasz = clasz;
     }
 
 }
