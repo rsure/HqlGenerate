@@ -36,6 +36,7 @@ public class HqlGenBaseUtil {
 
     public static boolean isEmpty(Object value){
         if(value !=null){
+            //test
             if(value instanceof List){
                 return ((List)value).size() == 0;
             }if(value instanceof Object[]){
